@@ -24,8 +24,7 @@ function codigos() {
     return(codigos)
 }
 
-console.log(codigos())
-
+let listaedades=edades()
 function edadmayor(edades) {
     let mayor=0;
     console.log(edades);
@@ -38,23 +37,21 @@ function edadmayor(edades) {
     return mayor;
 
 }
-
-function edadRepetida(edades) {
+let mayor=edadmayor(listaedades)
+function edadRepetida(edades,edadmayor) {
     let i = 0;
-    let resultado = [];
-    console.log(edades);
-    edades.forEach(edad => {
-        let edadRepetida=edades[i++];
-        if (edad==edadRepetida) {
-            // console.log("sdfsds", edad);
-            edadRepetida = edad;
-            resultado.push(edad)
-        }
-    });
+   edades.forEach(edad =>{
 
-    return resultado;
-
+    if (edadmayor==edad) {
+        i++;
+    }
+})
+  
+return i
 }
 
-console.log(edadmayor(edades()));
-console.log("Cantidad", edadRepetida(edades()));
+console.log(listaedades)
+console.log(edadRepetida(listaedades, mayor));
+
+// console.log(edadmayor(edades()));
+// console.log("Cantidad", edadRepetida(edades()));
