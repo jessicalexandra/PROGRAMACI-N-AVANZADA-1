@@ -25,7 +25,7 @@ function codigos() {
 }
 
 let listaedades=edades()
-function edadmayor(edades) {
+let edadmayor=(edades)=> {
     let mayor=0;
     console.log(edades);
     edades.forEach(edad => {
@@ -38,7 +38,7 @@ function edadmayor(edades) {
 
 }
 let mayor=edadmayor(listaedades)
-function edadRepetida(edades,edadmayor) {
+let  edadRepetida=(edades,edadmayor)=> {
     let i = 0;
    edades.forEach(edad =>{
 
