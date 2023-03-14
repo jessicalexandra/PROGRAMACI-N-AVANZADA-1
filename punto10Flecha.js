@@ -1,14 +1,14 @@
-const alimentosInsecto = ['Abejas','Orugas','hormigas','grillos','saltahojas'];
+let alimentosInsecto = ['Abejas','Orugas','hormigas','grillos','saltahojas'];
   
-const alimentosAnimales = ['Pollo','Cerdo','Cordero','Pavo','Gallina'];
+let alimentosAnimales = ['Pollo','Cerdo','Cordero','Pavo','Gallina'];
 
-const alimentosVegetales = ['Lechuga','Espinacas','Brócoli','Zanahoria','Tomate'];
+let alimentosVegetales = ['Lechuga','Espinacas','Brócoli','Zanahoria','Tomate'];
   
-const tipos = ['vegetal', 'animal', 'insecto'];
+let tipos = ['vegetal', 'animal', 'insecto'];
 
-const alimentos = [];
+let alimentos = [];
 
-for (let i = 0; i < 20; i++) {
+for (let i = 0; i < 1; i++) {
     tipos.forEach(tipo => {
         if (tipo == 'vegetal') {
             alimentosVegetales.forEach(vegetale => {
@@ -40,25 +40,19 @@ for (let i = 0; i < 20; i++) {
 
 console.log(alimentos)
 
-const getAlimentosVegetales = (alimentos, callback) => {
+let getAlimentosVegetales = (alimentos, callback) => {
 
     setTimeout(() => {
-        const  vegetalesMasEnergia = alimentos.filter(alimento => alimento.tipo === "vegetal" && alimento.nivelEnergia > 200);
+        let  vegetalesMasEnergia = alimentos.filter(alimento => alimento.tipo === "vegetal" && alimento.nivelEnergia > 200);
 
-        if (vegetalesMasEnergia.length === 0) {
-            callback(`No hay informacion de los vegetales`);
-            return;
-        }
-        callback(null, vegetalesMasEnergia);
+    
+        callback( vegetalesMasEnergia);
     }, 5000)
 
 };
 
-getAlimentosVegetales(alimentos, (error, nivelesEnergia) => {
-    if (error) {
-        console.log(error)
-        return;
-    }
+getAlimentosVegetales(alimentos, ( nivelesEnergia) => {
+   
 
     let sumatoria = 0;
     nivelesEnergia.forEach(nivelEnergia => {
